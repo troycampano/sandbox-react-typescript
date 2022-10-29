@@ -3,15 +3,7 @@ import './App.css';
 import Home from "./Home";
 import About from "./About"
 import Contact from "./Contact"
-import { Routes, Route } from "react-router-dom"
-
-type Props = {
-  name: string;
-}
-
-function Welcome(props: Props) {
-  return <h1>Hello, {props.name}</h1>;
-}
+import { Routes, Route, Link } from "react-router-dom"
 
 function App() {
   return (
@@ -21,7 +13,14 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
       </Routes>
-      <Welcome name="Troy" />
+      <nav style={{ margin: 10 }}>
+        <Link to="/" style={{ padding: 5 }}>
+          Home
+        </Link>
+        <Link to="/about" style={{ padding: 5 }}>
+          About
+        </Link>
+      </nav>
     </div>
   );
 }
